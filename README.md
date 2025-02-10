@@ -1,102 +1,104 @@
-# E-commerce--along
-Ecommerce-Follow-Along
-This repository is part of a guided project to build a fully functional E-commerce platform. It is designed to help participants understand the key concepts, tools, and workflows involved in developing an online store.
+# React + Vite
 
-Project Description
-This project focuses on implementing the core features of an E-commerce platform, such as:
+Milestone 1
+This project will be built using MERN Stack.
+REST API Creation: Through the mentor-guided project, you will learn to build scalable APIs.
+Authentication: You will get to learn to implement secure login and registration functionalities. -Database Schema Design: You will get to explore how to create structured data models using MongoDB.
+Backend Development: As a part of the project, you will learn to set up robust server-side logic with Node.js and Express.
 
-Product Listings: Displaying available products with details like name, price, and description.
-Shopping Cart: Allowing users to add or remove items from their cart.
-User Authentication: Secure user registration, login, and logout functionality.
-Payment Gateway Integration: Enabling secure online payments.
-The goal of the project is to gain practical experience in building scalable and efficient web applications.
+Milestone 2
+Project Folder Structure: Learn to organize your project files into separate frontend and backend directories.
+React Frontend Setup: Initialize a React application for building the user interface.
+Node.js Backend Setup: Set up a simple Node.js server to prepare for API integration in future milestones.
+Tailwind CSS Configuration: Integrate and configure Tailwind CSS to enable modern, responsive, and utility-based styling.
+Login Page Development: Create the first user interface of your e-commerce application, focusing on both functionality and styling.
 
-#Milestone 1:#
-Overview:
-ShopEase is a robust e-commerce website built using the MERN stack (MongoDB, Express.js, React.js, and Node.js). It is designed to offer users a seamless shopping experience, providing easy browsing, secure transactions, and personalized recommendations. This project is a practical implementation of full-stack development concepts.
+Milestone 3
+Setting up backend folders and files.
+Configuring and connecting the server to MongoDB.
+Writing basic error-handling code.
 
-Key Features:
+Milestone 4
+1. What’s a Model?
+A model is like a detailed map or plan.
+When you create a User Model, you’re designing how a user’s data (like name, email, and password) will look in the database. Imagine drawing a blueprint of a house.
+The model is the map of what information you need to store for each user.
+In MongoDB, we use something called Schemas to create a model.
+A schema is a definition of what data should look like for that model.
+2. What’s a Controller?
+A controller is a special part of the server that decides what happens when someone interacts with your app.
+For example, if someone wants to sign up for your website, the controller will handle what happens when the data is sent to the server.
+Think of the controller as a "manager" of requests and responses. It’s like the teacher in a classroom—telling the students (your app) what to do and ensuring everything goes smoothly.
+3. File Uploads with Multer
+Sometimes, your users might want to upload files like profile pictures.
+To help with this, we use Multer, which is a tool that makes it easy to upload files to your server.
+Multer will help us store user images in the backend and keep track of them. It's like a virtual file cabinet for storing pictures!
 
-Product Catalog: Browse and search through a variety of products effortlessly.
+Milestone 5
+1. What’s a Sign-Up page?
+The Sign-Up page is where users can enter their details to create an account. This page will typically include fields like:
+Name
+Email
+Password
+This page allows users to provide their information, which will be sent to the server for processing.
+We’ll create a simple yet effective sign-up form that looks clean and is user-friendly.
+2. What is Form validation?
+Form Validation ensures that the information users provide is correct and in the right format.
+For instance, we’ll check if the email is in the correct format and if the password meets certain security criteria (e.g., minimum length).
+Form validation helps prevent errors and ensures that the backend receives clean and valid data.
 
-User Authentication: Secure login and registration system for personalized user experiences.
+Milestone 6
+Why encrypting passwords?
+Protect User Data: Keeps passwords safe if hackers access the database.
+Privacy: Ensures user passwords aren’t visible to anyone.
+Compliance: Follows security laws like GDPR and PCI-DSS.
+Stops Password Theft: Encrypted passwords can’t be easily stolen or guessed.
 
-Shopping Cart: Add, update, or remove items before proceeding to checkout.
+Milestone 7
+User Enters Credentials:
+The user provides their email/username and password on the login page.
+Fetch User Data from Database:
+The backend retrieves the user record based on the provided email/username.
+If the user is not found, return an error: "User does not exist."
+Compare Encrypted Passwords:
+Process the user's input password using the same hashing algorithm (e.g., bcrypt).
+Compare the resulting hash to the stored hashed password.
+If they match, the user is authenticated; if not, send an error.
 
-Order Management: Track orders, view order history, and handle payments securely.
+Milestone 8
+Showcase Products Effectively: Presents product details in a clear and visually appealing way.
+Reusable Design: Can be used across multiple pages or sections of the app.
+Improved User Experience: Makes it easy for users to browse and interact with products.
+Organized Layout: Keeps the homepage clean and structured.
+Create a Dynamic Component: Design a single card component that accepts product details as props.
+Use Mapping: Use array mapping to iterate over the product list and render a card for each product.
+Pass Data Dynamically: Pass unique product information (e.g., name, price, image) to each card.
+Maintain Consistency: Ensure the layout remains uniform for all products.
 
-Admin Panel: Manage products, orders, and users with administrative controls.
+Milestone 9: Creating the Product Form
+Data Management:
+Configured state management to handle form inputs efficiently.
+Validated user inputs before submission to ensure accurate product data.
 
+Milestone 10: Creating the Product Schema and API Endpoint
 
+In this milestone, we focused on defining the structure of product data and creating an API endpoint to store product details in MongoDB.
 
-Tech Stack:
-Front-End: React — for building an interactive and responsive user interface.
+1. Product Schema Definition:
+Defined a structured product schema using Mongoose to store product data in MongoDB.
+Ensured each field has proper validations to maintain data integrity:
 
-Back-End: Node.js with Express — for server-side logic and API handling.
+Name: Required, string
+Description: Required, string
+Price: Required, number, with validation for non-negative values
+Image URL(s): Required, array of strings for multiple image storage
+Category: Required, string
+CreatedAt: Automatically generated timestamp
+2. Endpoint Creation:
+Developed a POST endpoint (/api/products) to accept product details from the frontend.
 
-Database: MongoDB — for efficient storage and retrieval of product, user, and order data.
-
-
-Why This Project?
-
-This project aims to simulate the development of a real-world e-commerce platform while giving hands-on experience with the MERN stack. It’s a great way to understand the interplay between the front-end, back-end, and database, while solving a common user problem: making online shopping simple and enjoyable.
-
-
-#Milestone 2#:
-Description
-In Milestone 2, I focused on structuring the project and setting up the frontend and backend for the e-commerce application. This milestone involved configuring the development environment, creating a functional login page, and laying the foundation for future API integrations.
-
-What I Learned
-Project Folder Structure: I organized the project files into separate directories for the frontend (React) and backend (Node.js), streamlining the development process.
-React Frontend Setup: I initialized a React app to handle the user interface, ensuring a smooth foundation for building the app's frontend.
-Node.js Backend Setup: I set up a basic Node.js server to handle backend functionality, preparing for API integration in later milestones.
-Tailwind CSS Integration: I configured Tailwind CSS to enable utility-based, responsive styling throughout the project.
-Login Page Development: I created the first user interface of the e-commerce platform—a functional and styled login page—allowing users to securely log into the platform.
-Key Features
-Folder Structure: Organized files into frontend and backend directories for better management.
-Login Page: A functional login page for users to access the platform securely.
-Styling: Used Tailwind CSS to style the application with modern, responsive design principles.
-
-#Milestone 3#
-Project Description
-In Milestone 3, I focused on setting up the backend for the e-commerce application. This milestone involved organizing the backend code, connecting the application to MongoDB, setting up a Node.js server, and implementing basic error handling to ensure smooth operation.
-
-What I Learned
-Backend Folder Structure: I organized the backend code into a structured hierarchy, with separate folders for routes, controllers, models, and middleware.
-Server Setup: I initialized a Node.js server using Express and configured it to listen on a designated port, ready to handle incoming API requests.
-MongoDB Integration: I connected the application to MongoDB, ensuring efficient data storage and retrieval.
-Error Handling: I implemented basic error handling to provide clear messages for debugging and better user feedback when something goes wrong.
-
-Key Features
-Backend Organization: Set up a clean folder structure for organizing backend files.
-Server Initialization: Configured a basic Node.js server using Express.
-Database Connection: Successfully integrated MongoDB for data management.
-Error Handling: Added basic error handling for smoother server operation.
-
-#Milestone 4#
-
-Description
-In Milestone 4, I expanded the backend functionality of the e-commerce application by introducing user data management and file uploads. This involved creating a User Model and Controller, as well as configuring Multer for handling file uploads like profile pictures.
-
-What I Learned
-User Model Creation: Designed a blueprint for user data, specifying fields like name, email, and password using a MongoDB schema.
-
-User Controller: Implemented logic to manage user-related operations, such as adding new users and retrieving their information.
-File Uploads with Multer: Configured Multer to handle and store file uploads securely, enabling the application to accept user-uploaded images.
-
-Key Features
-
-User Model: Defined the structure for user data in the database using MongoDB schemas.
-
-User Controller: Managed server-side operations related to users, like handling requests for user registration or retrieval.
-
-File Uploads: Enabled file upload functionality, allowing users to upload profile pictures that are stored on the server.
-
-Submission Summary
-Code Push: All code changes have been pushed to the GitHub repository used for previous milestones.
-
-Repository Accessibility: The repository is publicly accessible.
-
-README Update: Added a summary of Milestone 4 progress to the README file.
-
-File Upload Support: Successfully configured Multer for handling and storing user-uploaded images.
+Implemented validation to ensure only correctly formatted data is stored in the database.
+Saved product information to MongoDB using Mongoose models.
+3. Data Validation & Integrity:
+Enforced strict validation to prevent invalid or incomplete product entries.
+Returned appropriate error messages for missing or incorrect data inputs

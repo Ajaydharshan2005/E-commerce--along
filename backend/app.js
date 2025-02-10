@@ -71,16 +71,26 @@ app.use((err, req, res, next) => {
         message: err.message || "Internal Server Error",
     });
 });
-// config
 if (process.env.NODE_ENV !== "PRODUCTION") {
     require("dotenv").config({
-        path: "config/.env",
+        path: "backend/config/.env",
     });
+}
 
-};
-app.use(bodyParser.json())
+// Allow CORS for Development Only
+if (process.env.NODE_ENV === 'development') {
+    const cors = require('cors');
+    app.use(cors({ origin: 'http://localhost:5173' }));
+}
+
+// Import Routes
+const user = require("./controller/user");
+const product = require("./controller/product");
+
+app.use("/api/v2/user", user);
+app.use("/api/v2/product", product); 
+
+// It's for Error Handling
 app.use(ErrorHandler);
-app.use("/api/v2/user", router)
-module.exports = app;
-  
-module.exports=app;module.exports=app;
+
+module.exports=app;
